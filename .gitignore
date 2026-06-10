@@ -1,0 +1,27 @@
+# ==========================================
+# NetPass Gateway - Git Ignore Rules
+# ==========================================
+
+# 1. Sensitive Credentials (CRITICAL)
+.env
+backend/.env
+frontend/.env
+*.pem
+*.key
+
+# 2. Local Databases (CRITICAL)
+*.db
+*.sqlite3
+netpass.db
+backend/netpass.db
+
+# 3. Development Environments & Dependencies
+node_modules/
+venv/
+env/
+__pycache__/
+*.pyc
+
+# 4. OS Generated Files
+.DS_Store
+Thumbs.db
