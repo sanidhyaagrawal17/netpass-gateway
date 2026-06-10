@@ -14,15 +14,15 @@ NetPass utilizes a decoupled architecture to manage the AAA (Authentication, Aut
 
 ## ✨ Key Technical Features
 
-* **EXCAP Integration:** Leverages the Meraki `splashAuthorizationStatus` API to build a custom External Captive Portal, allowing granular control over individual MAC addresses rather than just global identities.
+* **Meraki Splash Page Authentication:** Replaces static PSK sharing with the `merakiAuthUsers` API to construct a dynamic, approval-based External Captive Portal (EXCAP). Note: This enforces session-based identity management natively on the Meraki cloud, distinct from an 802.1X/RADIUS supplicant configuration.
 * **Identity Collision Handling (Upsert Pattern):** Implements robust state-reconciliation logic to bypass Cisco Meraki's global email uniqueness constraints ("Ghost Identities"). It utilizes automated email aliasing and cascading API requests to guarantee seamless credential generation.
 * **Asynchronous Polling:** The React frontend uses an intelligent polling loop to query the backend ledger, instantly displaying access credentials and connection QR codes the moment a network administrator approves a request.
-* **Manual Kill Switch:** A secure administrative ledger allows network operators to instantly revoke Wi-Fi access and purge identities from the Cisco Cloud with a single click.
+* **Manual Kill Switch & Role-Based Access:** Secures administrative endpoints via dependency-injected Bearer Tokens and strictly controls CORS. Authorized administrators can instantly revoke Wi-Fi access and purge identities from the Cisco Cloud with a single click.
 
 ## 🛠 Tech Stack
-* **Frontend:** React.js, React Router, Axios, QRCode.react, CSS Variables (Dark/Light mode native)
+* **Frontend:** React.js, React Router, Axios, QRCode.react, CSS Variables
 * **Backend:** Python 3, FastAPI, Uvicorn, Requests, SQLite3
-* **Networking/Security:** Cisco Meraki API, IEEE 802.1X concepts, WPA/WPA2
+* **Networking/Security:** Cisco Meraki API (Splash Authentication), Captive Portals, WPA/WPA2
 
 ## 🚀 Local Development Setup
 

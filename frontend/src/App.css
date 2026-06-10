@@ -449,3 +449,31 @@ button {
     font-size: 1.2rem;
   }
 }
+/* --- Admin Dashboard Polish --- */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color, #333); /* Adjust fallback color based on your dark theme */
+}
+
+.btn-logout {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-logout:hover {
+  color: var(--accent-red);
+  border-color: var(--accent-red);
+  background: rgba(239, 68, 68, 0.1); /* Subtle red tint */
+}
